@@ -1,2 +1,3 @@
-# makair-cpap
-[Experiment] Continuous Positive Airway Pressure ventilator for sleep apnea.
+# MakAir CPAP
+
+**Continuous Positive Airway Pressure ventilator for sleep apnea. Variant of the MakAir general-purpose ventilator.**
