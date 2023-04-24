@@ -36,6 +36,6 @@ These are the specification and design diagrams for the CPAP ventilator
 ### Réalisation matérielle
 ![Réalisation matérielle](https://github.com/LoanBoutry/MakAir_Ptech/blob/main/Conception/MCSE-R%C3%A9alisation%20mat%C3%A9rielle.png)
 
-## Choix Technologique
+## Technological Choice (Choix technologique)
 
 It is a document that lists all the solutions sought and retained to achieve the CPAP ventilator
