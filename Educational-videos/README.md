@@ -3,7 +3,7 @@
 | 0  | **Introduction**  |  |  |
 | 1  | This chapter will explain how to format a customer's need by structuring it with Sysml diagrams.  |   | [Terms of reference](https://github.com/makers-for-life/makair-cpap/tree/master/Conception-CPAP)   |
 | 2  | This chapter will explain the MCSE approach and how to use it to define the different I/O and system functions. |  | [MCSE](https://github.com/makers-for-life/makair-cpap/tree/master/Conception-CPAP)  |
-| 3  | This chapter will explain how to choose the right components for each functional block defined above. Explain some important parameters to consider when choosing components. | Content Cell  | [Technological Choice](https://github.com/makers-for-life/makair-cpap/tree/master/Conception-CPAP)  |
+| 3  | This chapter will explain how to choose the right components for each functional block defined above. Explain some important parameters to consider when choosing components. |  | [Technological Choice](https://github.com/makers-for-life/makair-cpap/tree/master/Conception-CPAP)  |
 | 4  | This chapter will explain why it is absolutely necessary to read the component datasheets and how this will allow us to have an electronic base of the system (definition of the pins for each component + realization of the electronic circuits).  |  |  |
 | 5  | This chapter will explain how to connect the components, how to integrate the power supply into the system and how to think about the order of components to run as you prototype.  |   |  |
 | 6  | This chapter will explain how to define unit tests for each component to validate their operation against the requirements of the specifications.  |  |  |
