@@ -1,7 +1,7 @@
 
 # Conception
 
-## CDC
+## Terms of reference (CdC)
 
 These are diagrams that structure the need thanks to the Sysml language. All the environment and constraints of the system are represented in the different diagrams
 
