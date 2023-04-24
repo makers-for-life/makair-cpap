@@ -8,6 +8,12 @@ This file lists all the documents that concern the design of the CPAP ventilator
 
 [Conception-CPAP](https://github.com/makers-for-life/makair-cpap/tree/master/Conception-CPAP)
 
+## Educational videos
+
+This file lists the series of instructional videos on the progress of the CPAP ventilator project. You can find all the chapters of the project with educational files
+
+[Educational videos](https://github.com/makers-for-life/makair-cpap/tree/master/Educational-videos)
+
 ## Firmware 
 
 This file lists all the programs (Arduino, C++) that has been realized during the project. You can find the main program of the CPAP respirator which integrates the different operating modes
@@ -26,6 +32,4 @@ This file lists various files that relate to specific information about the PPC 
 
 [Various-CPAP](https://github.com/makers-for-life/makair-cpap/tree/master/Various-CPAP)
 
-## Vidéos pédagogiques
 
-This file lists the series of instructional videos on the progress of the CPAP ventilator project. You can find all the chapters of the project with educational files
