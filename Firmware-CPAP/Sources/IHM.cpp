@@ -13,11 +13,11 @@ int buttonState3 = 1;
 int lastButtonState3 = 0;
 
 unsigned long lastDebounceTime = 0;  // le temps précédent du changement d'état du bouton
-unsigned long debounceDelay = 50;    // Delai de l'anti rebond, l'augmenter si il y a encore des rebonds sur le bouton
+unsigned long debounceDelay = 0;    // Delai de l'anti rebond, l'augmenter si il y a encore des rebonds sur le bouton
 unsigned long lastDebounceTime2 = 0;
-unsigned long debounceDelay2 = 50;
+unsigned long debounceDelay2 = 0;
 unsigned long lastDebounceTime3 = 0;
-unsigned long debounceDelay3 = 50;
+unsigned long debounceDelay3 = 0;
 ////////////////////////
 
 static double less, more, configuration = 0; //Valeurs des modes des bouttons
