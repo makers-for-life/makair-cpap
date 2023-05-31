@@ -18,9 +18,9 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-//cmdAirflow(0,110, 1000);
+//cmdAirflow(0,110, 10000);
 //cmdVitesse();
-//cmdPressure(0,20.5,1000,0.3);
+//cmdPressure(0,20.5,50000,0.3);
 //Test_caracteristique ();
-autoPilot(0,30,50000,0.5, 30);
+autoPilot(0,18,40000,0.2, 40); //double minimum, double maximum, int acceleration, double intervalle, int frequence
 }
