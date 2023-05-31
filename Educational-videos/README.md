@@ -1,8 +1,8 @@
 | Chapter  | Content | Video  | File |
 | ------------- | ------------- | ------------- | ------------- |
 | 0  | **Introduction**  | [Introduction](https://www.youtube.com/watch?v=J2UsDe6RBvU&ab_channel=MakAir-Projetopensource) |  |
-| 1  | This chapter will explain how to format a customer's need by structuring it with Sysml diagrams.  |   | [Terms of reference](https://github.com/makers-for-life/makair-cpap/tree/master/Conception-CPAP)   |
-| 2  | This chapter will explain the MCSE approach and how to use it to define the different I/O and system functions. |  | [MCSE](https://github.com/makers-for-life/makair-cpap/tree/master/Conception-CPAP)  |
+| 1  | This chapter will explain how to format a customer's need by structuring it with Sysml diagrams.  | [Chapter 1](https://www.youtube.com/watch?v=lZZDJNnGtbw&ab_channel=MakAir-Projetopensource)  | [Terms of reference](https://github.com/makers-for-life/makair-cpap/tree/master/Conception-CPAP)   |
+| 2  | This chapter will explain the MCSE approach and how to use it to define the different I/O and system functions. |[Chapter 2](https://www.youtube.com/watch?v=BaCOPvmWCng&t=80s&ab_channel=MakAir-Projetopensource) | [MCSE](https://github.com/makers-for-life/makair-cpap/tree/master/Conception-CPAP)  |
 | 3  | This chapter will explain how to choose the right components for each functional block defined above. Explain some important parameters to consider when choosing components. |  | [Technological Choice](https://github.com/makers-for-life/makair-cpap/tree/master/Conception-CPAP)  |
 | 4  | This chapter will explain why it is absolutely necessary to read the component datasheets and how this will allow us to have an electronic base of the system (definition of the pins for each component + realization of the electronic circuits).  |  |  |
 | 5  | This chapter will explain how to connect the components, how to integrate the power supply into the system and how to think about the order of components to run as you prototype.  |   |  |
