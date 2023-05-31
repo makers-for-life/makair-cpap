@@ -24,37 +24,37 @@ void PPC_init(int vitesseInit) {
 }
 
 void cmdVitesse() {
-  Speed = map(vitesse, 180, 1800, 0, 100);
-  setAffichagex2("Vitesse: ", Speed, " %");
-  configuration = debounceConfig(PA5, 50, configuration, 1);
+  Speed = map(vitesse, 180, 1800, 0, 100); //Valeur de la vitesse en % (0 à 100%)
+  setAffichagex2("Vitesse: ", Speed, " %"); //Fonction de l'affichage de la vitesse sur la 3ème ligne du LCD
+  configuration = debounceConfig(PA5, 50, configuration, 1); //Fonction de configuration pour changer d'état
   if (configuration == 1) {
     arret();
-    vitesse = debounceMore(PB5, 50, vitesse, 16, 1800);
-    vitesse = debounceLess(PA8, 50, vitesse, 16, 180);
+    vitesse = debounceMore(PB5, 50, vitesse, 16, 1800); //Fonction de configuration pour augmenter la valeur
+    vitesse = debounceLess(PA8, 50, vitesse, 16, 180); //Fonction de configuration pour diminuer la valeur
     configuration = debounceConfig(PA5, 50, configuration, 2);
     Serial.println(vitesse);
   }
   else if (configuration == 2) {
-    setVitesse(vitesse);
+    setVitesse(vitesse); //Mise en place de la nouvelle vitesse
     configuration = 0;
   }
 }
 
 void cmdAirflow(int minimun, int maximum, int acceleration) {
-  setAffichagex2("Seuil: ", seuil, " SLPM");
-  configuration = debounceConfig(PA5, 50, configuration, 1);
+  setAffichagex2("Seuil: ", seuil, " SLPM"); //Fonction de l'affichage de la vitesse sur la 3ème ligne du LCD
+  configuration = debounceConfig(PA5, 50, configuration, 1); //Fonction de configuration pour changer d'état
   if (configuration == 1) {
     arret();
     vitesse = 0;
-    seuil = debounceMore(PB5, 50, seuil, 1, maximum);
-    seuil = debounceLess(PA8, 50, seuil, 1, minimun);
+    seuil = debounceMore(PB5, 50, seuil, 1, maximum); //Fonction de configuration pour augmenter la valeur
+    seuil = debounceLess(PA8, 50, seuil, 1, minimun); //Fonction de configuration pour diminuer la valeur
     configuration = debounceConfig(PA5, 50, configuration, 2);
   }
   else if (configuration == 2) {
-    while (seuil != getAirflow()) { //Boucle modifiant la vitesse jusqu'à atteindre le seuil configuré
+    while (seuil != getAirflow()) { //Boucle de régulation modifiant la vitesse jusqu'à atteindre le seuil configuré
       if (seuil > getAirflow()) vitesse++;
       if (seuil < getAirflow()) vitesse--;
-      setVitesse(vitesse);
+      setVitesse(vitesse); //Mise en place de la nouvelle vitesse
       delayMicroseconds(acceleration);
     }
     asservissement++;
@@ -66,20 +66,20 @@ void cmdAirflow(int minimun, int maximum, int acceleration) {
 }
 
 void cmdPressure(double minimum, double maximum, int acceleration, double intervalle) {
-  setAffichagex2("Limite: ", pressionLimite, " mbar");
-  configuration = debounceConfig(PA5, 50, configuration, 1);
+  setAffichagex2("Limite: ", pressionLimite, " mbar"); //Fonction de l'affichage de la vitesse sur la 3ème ligne du LCD
+  configuration = debounceConfig(PA5, 50, configuration, 1); //Fonction de configuration pour changer d'état
   if (configuration == 1) {
     arret();
     vitesse = 0;
-    pressionLimite = debounceMore(PB5, 50, pressionLimite, 0.1 , maximum);
-    pressionLimite = debounceLess(PA8, 50, pressionLimite, 0.1, minimum);
+    pressionLimite = debounceMore(PB5, 50, pressionLimite, 0.1 , maximum); //Fonction de configuration pour augmenter la valeur
+    pressionLimite = debounceLess(PA8, 50, pressionLimite, 0.1, minimum); //Fonction de configuration pour diminuer la valeur
     configuration = debounceConfig(PA5, 50, configuration, 2);
   }
   else if (configuration == 2) {
-    while ((pressionLimite - intervalle) >= getPres() || (pressionLimite + intervalle) <= getPres()) { //Boucle modifiant la vitesse jusqu'à atteindre le seuil configuré
+    while ((pressionLimite - intervalle) >= getPres() || (pressionLimite + intervalle) <= getPres()) { //Boucle de régulation modifiant la vitesse jusqu'à atteindre le seuil configuré
       if (pressionLimite > getPres()) vitesse++;
       if (pressionLimite < getPres()) vitesse--;
-      setVitesse(vitesse);
+      setVitesse(vitesse); //Mise en place de la nouvelle vitesse
       delayMicroseconds(acceleration);
     }
     asservissement++;
@@ -99,10 +99,10 @@ void autoPilot(double minimum, double maximum, int acceleration, double interval
     configuration = debounceConfig(PA5, 50, configuration, 1);
   }
 
-//  if (configuration > 0) {
-//    setAffichagex2("Seuil : ", pressionLimite, " mbar");
-//    setAffichagex3("Pilot : ", traitement, " mbar");
-//  }
+  //  if (configuration > 0) {
+  //    setAffichagex2("Seuil : ", pressionLimite, " mbar");
+  //    setAffichagex3("Pilot : ", traitement, " mbar");
+  //  }
 
   if (configuration == 1) {
     setAffichagex2("Seuil: ", pressionLimite, " mbar");
@@ -119,14 +119,14 @@ void autoPilot(double minimum, double maximum, int acceleration, double interval
   }
 
   else if (configuration == 3) {
-    while ((pressionLimite - intervalle) >= getPres() || pressionLimite <= getPres()) { //Boucle modifiant la vitesse jusqu'à atteindre le seuil configuré
-      if (pressionLimite > getPres()) vitesse++;
-      if (pressionLimite < getPres()) vitesse--;
+    while ((pressionLimite - intervalle) >= getPres() || (pressionLimite + intervalle) <= getPres()) { //Boucle modifiant la vitesse jusqu'à atteindre le seuil configuré
+      if ((pressionLimite - intervalle) > getPres()) vitesse++;
+      if ((pressionLimite + intervalle) < getPres()) vitesse--;
       setVitesse(vitesse);
       delayMicroseconds(acceleration);
     }
     asservissement++;
-    if (asservissement >= 100) { //dès que le seuil est bien atteint, la configuration est finie
+    if (asservissement >= 2000) { //dès que le seuil est bien atteint, la configuration est finie
       vitessePilot = vitesse;
       configuration = 4;
       seuil = getAirflow();
@@ -140,16 +140,16 @@ void autoPilot(double minimum, double maximum, int acceleration, double interval
       delay(100);
     }
     if (respiration >= frequence && pilote == 1) {
-      while ((traitement - intervalle) >= getPres() || traitement <= getPres()) { //Boucle modifiant la vitesse jusqu'à atteindre le seuil configuré
-        if (traitement > getPres()) vitessePilot++;
-        if (traitement < getPres()) vitessePilot--;
+      while ((traitement - intervalle) >= getPres() || (traitement + intervalle) <= getPres()) { //Boucle modifiant la vitesse jusqu'à atteindre le seuil configuré
+        if ((traitement - intervalle) > getPres()) vitessePilot++;
+        if ((traitement + intervalle) < getPres()) vitessePilot--;
         setVitesse(vitessePilot);
         delayMicroseconds(acceleration);
       }
       asservissement++;
     }
 
-    if (asservissement >= 100 && pilote == 1) { //dès que le seuil est bien atteint, la configuration est finie
+    if (asservissement >= 2000 && pilote == 1) { //dès que le seuil est bien atteint, la configuration est finie
       asservissement = 0;
       seuil = getAirflow();
       respiration = 0;
@@ -157,16 +157,16 @@ void autoPilot(double minimum, double maximum, int acceleration, double interval
     }
 
     if (respiration >= frequence && pilote == 0) {
-      while ((pressionLimite - intervalle) >= getPres() || pressionLimite <= getPres()) { //Boucle modifiant la vitesse jusqu'à atteindre le seuil configuré
-        if (pressionLimite > getPres()) vitessePilot++;
-        if (pressionLimite < getPres()) vitessePilot--;
+      while ((pressionLimite - intervalle) >= getPres() || (pressionLimite + intervalle) <= getPres()) { //Boucle modifiant la vitesse jusqu'à atteindre le seuil configuré
+        if ((pressionLimite - intervalle) > getPres()) vitessePilot++;
+        if ((pressionLimite + intervalle) < getPres()) vitessePilot--;
         setVitesse(vitessePilot);
         delayMicroseconds(acceleration);
       }
       asservissement++;
     }
 
-    if (asservissement >= 100 && pilote == 0) { //dès que le seuil est bien atteint, la configuration est finie
+    if (asservissement >= 3000 && pilote == 0) { //dès que le seuil est bien atteint, la configuration est finie
       asservissement = 0;
       seuil = getAirflow();
       respiration = 0;
