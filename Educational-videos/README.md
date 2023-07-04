@@ -10,12 +10,12 @@
 | 7  | This chapter will explain how the blower works, the programming to make it work and the unit tests of the component. |  | [Blower](https://github.com/makers-for-life/makair-cpap/blob/master/Educational-videos/Educational-sheets/Ptech_Blower.pdf)  |
 | 8  | This chapter will explain how the flow meter works, the programming to make it work and the unit tests of the component.  |   | [Flow meter](https://github.com/makers-for-life/makair-cpap/blob/master/Educational-videos/Educational-sheets/Ptech_debitmetre.pdf)  |
 | 9  | This chapter will explain how the pressure sensor works, the programming to make it work and the unit tests of the component. |   | [Pressure Sensor](https://github.com/makers-for-life/makair-cpap/blob/master/Educational-videos/Educational-sheets/Ptech_capteur_pression.pdf)  |
-| 10  | This chapter will explain how to set up an HMI.  |   |  |
+| 10  | This chapter will explain how to set up an HMI.  |   | [HMI](https://github.com/makers-for-life/makair-cpap/blob/master/Educational-videos/Educational-sheets/Ptech_IHM.pdf) |
 | 11  | This chapter will explain the integration (electronics and software) of each component seen previously to realize the prototype of the PPC ventilator. |  | [Integration](https://github.com/makers-for-life/makair-cpap/blob/master/Educational-videos/Educational-sheets/Ptech_Integration.pdf) |
 | 12  | This chapter will explain the different parts to model and print in order to have a more presentable and usable prototype during its operation. |   | [Parts](https://github.com/makers-for-life/makair-cpap/tree/master/Parts-CPAP) |
-| 13  | This chapter will explain how to model each 3D part in FreeCAD.  |  |  |
-| 14  | This chapter will explain the parameters to configure when printing the part modeled with Ultimaker Cura. |  |   |
-| 15  | This chapter will focus on the integration of all the printed parts on the prototype to form a presentable and usable system.  |   |   |
+| 13  | This chapter will explain how to model each 3D part in FreeCAD.  |  | [CAD](https://github.com/makers-for-life/makair-cpap/blob/master/Educational-videos/Educational-sheets/Maquette_3D.pdf) |
+| 14  | This chapter will explain the parameters to configure when printing the part modeled with Ultimaker Cura. |  |  [3D printing](https://github.com/makers-for-life/makair-cpap/blob/master/Educational-videos/Educational-sheets/Maquette_3D.pdf) |
+| 15  | This chapter will focus on the integration of all the printed parts on the prototype to form a presentable and usable system.  |   |  [Integration](https://github.com/makers-for-life/makair-cpap/blob/master/Educational-videos/Educational-sheets/Ptech_Integration.pdf) |
 | 16  | This chapter will explain how to program a simple PPC mode in order to have a system that meets the specifications. |   | [Firmware](https://github.com/makers-for-life/makair-cpap/tree/master/Firmware-CPAP)  |
 | 17  | This chapter will highlight the validation of the system according to the specifications, solve some problems and optimize the system.  |  |  |
 | 18  | **Conclusion** |  |  |
