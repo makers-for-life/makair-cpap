@@ -1,6 +1,14 @@
 
 # Conception
 
+## Technological Choice (Choix technologique)
+
+It is a document that lists all the solutions sought and retained to achieve the CPAP ventilator
+
+## Tests PPC
+
+This document contains all the unit tests performed on the system (Execution and Results).
+
 ## Terms of reference (CdC)
 
 These are diagrams that structure the need thanks to the Sysml language. All the environment and constraints of the system are represented in the different diagrams
@@ -36,10 +44,3 @@ These are the specification and design diagrams for the CPAP ventilator
 ### Réalisation matérielle
 ![Réalisation matérielle](https://github.com/LoanBoutry/MakAir_Ptech/blob/main/Conception/MCSE-R%C3%A9alisation%20mat%C3%A9rielle.png)
 
-## Technological Choice (Choix technologique)
-
-It is a document that lists all the solutions sought and retained to achieve the CPAP ventilator
-
-## Tests PPC
-
-This document contains all the unit tests performed on the system (Execution and Results).
