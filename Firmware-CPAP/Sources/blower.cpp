@@ -49,12 +49,11 @@ void setVitesse(uint16_t vitesseCible){
 
 void setVitesseCourbe(uint16_t vitesseCourbe){
   if((vitesseCourbe >= 0) && (vitesseCourbe <= MAX_BLOWER_SPEED)){
-  speedBlower = 0;
   targetSpeed = vitesseCourbe;
   while(speedBlower <= vitesseCourbe){ //boucle de rampe de vitesse
     speedBlower++;
     timerPPM->setCaptureCompare(TIM_CHANNEL_ESC_BLOWER, BlowerSpeed2MicroSeconds(speedBlower), MICROSEC_COMPARE_FORMAT);
-    delay(10);
+    //delay(10);
   }
  }
  else {
