@@ -22,5 +22,6 @@ void loop() {
 //cmdVitesse();
 //cmdPressure(0,20.5,50000,0.3);
 //Test_caracteristique ();
+//setVitesseCourbe(1620);
 autoPilot(0,18,40000,0.2, 40); //double minimum, double maximum, int acceleration, double intervalle, int frequence
 }
