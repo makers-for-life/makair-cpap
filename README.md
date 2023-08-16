@@ -20,6 +20,12 @@ This file lists all the programs (Arduino, C++) that has been realized during th
 
 [Firmware-CPAP](https://github.com/makers-for-life/makair-cpap/tree/master/Firmware-CPAP)
 
+## Motherboard 
+
+This file lists all documents concerning the design and production of the PCB (BOM, Gerber, etc.).
+
+[Motherboard-CPAP](https://github.com/makers-for-life/makair-cpap/tree/master/Firmware-CPAP)
+
 ## Parts
 
 This file lists all files related to the mechanics of the CPAP ventilator. You can find the different parts in STL file and FreeCAD files
