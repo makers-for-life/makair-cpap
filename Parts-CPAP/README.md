@@ -39,6 +39,10 @@ This file contains all the parts of the CPAP ventilator case
 |  Fermeture | V1 |  | ✅ | [STL](https://github.com/makers-for-life/makair-cpap/blob/master/Parts-CPAP/Case/Fermeture_1.stl) | [STL](https://github.com/makers-for-life/makair-cpap/blob/master/Parts-CPAP/Case/Fermeture_2.stl)
 |  Renfort | V1 |  | ✅ | [STL](https://github.com/makers-for-life/makair-cpap/blob/master/Parts-CPAP/Case/Renfort_Base.stl) |
 
+| Part  | Version | Improvement | Ready? | Reference | Pictures |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| Casing | V2 | New casing | ✅ | [ABS case](https://fr.rs-online.com/web/p/boitiers-pour-usage-general/7739651) | ------------- |
+
 ## Filter Box
 
 This part is taken from the MakAir [Filter Box](https://github.com/makers-for-life/makair-parts/tree/master/src/machine-filter-box)
