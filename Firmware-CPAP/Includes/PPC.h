@@ -13,5 +13,3 @@ void autoPilot(double minimum, double maximum, int acceleration, double interval
 //void asservissement();
 
 void Test_caracteristique ();
-
-void affichage();
