@@ -41,7 +41,7 @@ This file contains all the parts of the CPAP ventilator case
 
 | Part  | Version | Improvement | Ready? | Reference | Pictures |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| Casing | V2 | New casing | ✅ | [ABS case](https://fr.rs-online.com/web/p/boitiers-pour-usage-general/7739651) | [IHM /](https://github.com/makers-for-life/makair-cpap/blob/f39e4fc76240c4e0c32e0eeabd5b6c42e856a4f0/Parts-CPAP/Case_V2/IHM.jpg) [Input /](https://github.com/makers-for-life/makair-cpap/blob/f39e4fc76240c4e0c32e0eeabd5b6c42e856a4f0/Parts-CPAP/Case_V2/Input.jpg) [Output](https://github.com/makers-for-life/makair-cpap/blob/f39e4fc76240c4e0c32e0eeabd5b6c42e856a4f0/Parts-CPAP/Case_V2/Output.jpg) |
+| Case | V2 | New casing | ✅ | [ABS case](https://fr.rs-online.com/web/p/boitiers-pour-usage-general/7739651) | [IHM /](https://github.com/makers-for-life/makair-cpap/blob/f39e4fc76240c4e0c32e0eeabd5b6c42e856a4f0/Parts-CPAP/Case_V2/IHM.jpg) [Input /](https://github.com/makers-for-life/makair-cpap/blob/f39e4fc76240c4e0c32e0eeabd5b6c42e856a4f0/Parts-CPAP/Case_V2/Input.jpg) [Output](https://github.com/makers-for-life/makair-cpap/blob/f39e4fc76240c4e0c32e0eeabd5b6c42e856a4f0/Parts-CPAP/Case_V2/Output.jpg) |
 
 ## Filter Box
 
