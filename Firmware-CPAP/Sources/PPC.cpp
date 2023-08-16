@@ -26,12 +26,12 @@ void PPC_init(int vitesseInit) {
 void cmdVitesse() {
   Speed = map(vitesse, 180, 1800, 0, 100); //Valeur de la vitesse en % (0 à 100%)
   setAffichagex2("Vitesse: ", Speed, " %"); //Fonction de l'affichage de la vitesse sur la 3ème ligne du LCD
-  configuration = debounceConfig(PA5, 50, configuration, 1); //Fonction de configuration pour changer d'état
+  configuration = debounceConfig(PIN_BUTTON_CONFIG, 50, configuration, 1); //Fonction de configuration pour changer d'état
   if (configuration == 1) {
     arret();
-    vitesse = debounceMore(PB5, 50, vitesse, 16, 1800); //Fonction de configuration pour augmenter la valeur
-    vitesse = debounceLess(PA8, 50, vitesse, 16, 180); //Fonction de configuration pour diminuer la valeur
-    configuration = debounceConfig(PA5, 50, configuration, 2);
+    vitesse = debounceMore(PIN_BUTTON_MORE, 50, vitesse, 16, 1800); //Fonction de configuration pour augmenter la valeur
+    vitesse = debounceLess(PIN_BUTTON_LESS, 50, vitesse, 16, 180); //Fonction de configuration pour diminuer la valeur
+    configuration = debounceConfig(PIN_BUTTON_CONFIG, 50, configuration, 2);
     Serial.println(vitesse);
   }
   else if (configuration == 2) {
@@ -42,13 +42,13 @@ void cmdVitesse() {
 
 void cmdAirflow(int minimun, int maximum, int acceleration) {
   setAffichagex2("Seuil: ", seuil, " SLPM"); //Fonction de l'affichage de la vitesse sur la 3ème ligne du LCD
-  configuration = debounceConfig(PA5, 50, configuration, 1); //Fonction de configuration pour changer d'état
+  configuration = debounceConfig(PIN_BUTTON_CONFIG, 50, configuration, 1); //Fonction de configuration pour changer d'état
   if (configuration == 1) {
     arret();
     vitesse = 0;
-    seuil = debounceMore(PB5, 50, seuil, 1, maximum); //Fonction de configuration pour augmenter la valeur
-    seuil = debounceLess(PA8, 50, seuil, 1, minimun); //Fonction de configuration pour diminuer la valeur
-    configuration = debounceConfig(PA5, 50, configuration, 2);
+    seuil = debounceMore(PIN_BUTTON_MORE, 50, seuil, 1, maximum); //Fonction de configuration pour augmenter la valeur
+    seuil = debounceLess(PIN_BUTTON_LESS, 50, seuil, 1, minimun); //Fonction de configuration pour diminuer la valeur
+    configuration = debounceConfig(PIN_BUTTON_CONFIG, 50, configuration, 2);
   }
   else if (configuration == 2) {
     while (seuil != getAirflow()) { //Boucle de régulation modifiant la vitesse jusqu'à atteindre le seuil configuré
@@ -67,13 +67,13 @@ void cmdAirflow(int minimun, int maximum, int acceleration) {
 
 void cmdPressure(double minimum, double maximum, int acceleration, double intervalle) {
   setAffichagex2("Limite: ", pressionLimite, " mbar"); //Fonction de l'affichage de la vitesse sur la 3ème ligne du LCD
-  configuration = debounceConfig(PA5, 50, configuration, 1); //Fonction de configuration pour changer d'état
+  configuration = debounceConfig(PIN_BUTTON_CONFIG, 50, configuration, 1); //Fonction de configuration pour changer d'état
   if (configuration == 1) {
     arret();
     vitesse = 0;
-    pressionLimite = debounceMore(PB5, 50, pressionLimite, 0.1 , maximum); //Fonction de configuration pour augmenter la valeur
-    pressionLimite = debounceLess(PA8, 50, pressionLimite, 0.1, minimum); //Fonction de configuration pour diminuer la valeur
-    configuration = debounceConfig(PA5, 50, configuration, 2);
+    pressionLimite = debounceMore(PIN_BUTTON_MORE, 50, pressionLimite, 0.1 , maximum); //Fonction de configuration pour augmenter la valeur
+    pressionLimite = debounceLess(PIN_BUTTON_LESS, 50, pressionLimite, 0.1, minimum); //Fonction de configuration pour diminuer la valeur
+    configuration = debounceConfig(PIN_BUTTON_CONFIG, 50, configuration, 2);
   }
   else if (configuration == 2) {
     while ((pressionLimite - intervalle) >= getPres() || (pressionLimite + intervalle) <= getPres()) { //Boucle de régulation modifiant la vitesse jusqu'à atteindre le seuil configuré
@@ -96,7 +96,7 @@ void autoPilot(double minimum, double maximum, int acceleration, double interval
 
   if (configuration == 0) {
     arret();
-    configuration = debounceConfig(PA5, 50, configuration, 1);
+    configuration = debounceConfig(PIN_BUTTON_CONFIG, 50, configuration, 1);
   }
 
   //  if (configuration > 0) {
@@ -106,16 +106,16 @@ void autoPilot(double minimum, double maximum, int acceleration, double interval
 
   if (configuration == 1) {
     setAffichagex2("Seuil: ", pressionLimite, " mbar");
-    pressionLimite = debounceMore(PB5, 50, pressionLimite, 0.5 , maximum);
-    pressionLimite = debounceLess(PA8, 50, pressionLimite, 0.5, minimum);
-    configuration = debounceConfig(PA5, 50, configuration, 2);
+    pressionLimite = debounceMore(PIN_BUTTON_MORE, 50, pressionLimite, 0.5 , maximum);
+    pressionLimite = debounceLess(PIN_BUTTON_LESS, 50, pressionLimite, 0.5, minimum);
+    configuration = debounceConfig(PIN_BUTTON_CONFIG, 50, configuration, 2);
   }
 
   if (configuration == 2) {
     setAffichagex3("Pilot: ", traitement, " mbar");
-    traitement = debounceMore(PB5, 50, traitement, 0.5 , pressionLimite);
-    traitement = debounceLess(PA8, 50, traitement, 0.5, minimum);
-    configuration = debounceConfig(PA5, 50, configuration, 3);
+    traitement = debounceMore(PIN_BUTTON_MORE, 50, traitement, 0.5 , pressionLimite);
+    traitement = debounceLess(PIN_BUTTON_LESS, 50, traitement, 0.5, minimum);
+    configuration = debounceConfig(PIN_BUTTON_CONFIG, 50, configuration, 3);
   }
 
   else if (configuration == 3) {
@@ -134,7 +134,7 @@ void autoPilot(double minimum, double maximum, int acceleration, double interval
     }
   }
   else if (configuration == 4) {
-    configuration = debounceConfig(PA5, 50, configuration, 5);
+    configuration = debounceConfig(PIN_BUTTON_CONFIG, 50, configuration, 5);
     if (seuil - 5 >= getAirflow()) {
       respiration++;
       delay(100);

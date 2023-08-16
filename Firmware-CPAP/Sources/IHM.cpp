@@ -1,7 +1,7 @@
 #include "IHM.h"
 
 HardwareTimer* hardwareTimer4;  // Timer Pressure command
-LiquidCrystal lcd(PA10, PB4, PA9, PC7, PA7, PA6); //Attribution de l'Afficheur
+LiquidCrystal lcd(PA10, PC4, PB13, PB14, PB15, PB1); //Attribution de l'Afficheur
 ///////Anti-rebond/////////
 int reading, reading2, reading3 = 0;
 
