@@ -1,3 +1,7 @@
+#define PIN_BUTTON_CONFIG PB7
+#define PIN_BUTTON_MORE   PA15
+#define PIN_BUTTON_LESS   PA13
+
 #include <Arduino.h>
 #include <LiquidCrystal.h>
 #include "pressureSensor.h"
